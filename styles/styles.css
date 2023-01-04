@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap");
+* {
+  margin: 0;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: bold;
+  color: black;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+body #drum-machine {
+  position: relative;
+  text-align: center;
+  width: 600px;
+  background-image: linear-gradient(220deg, #2b2b2b 25%, #525252 50%, #2b2b2b 75%);
+  border-radius: 1rem;
+  outline: 5px solid grey;
+}
+body #drum-machine .pad-bank {
+  display: inline-block;
+  margin: 20px;
+  width: 270px;
+  height: 270px;
+  background-color: linear-gradient(220deg, #2b2b2b 25%, #525252 50%, #2b2b2b 75%);
+}
+body #drum-machine .pad-bank .drum-pad {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  height: 75px;
+  width: 75px;
+  background-image: linear-gradient(220deg, #ff8c21 25%, #ff9b3d 50%, #ff8c21 75%);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  padding-top: 24px;
+  border: 2px solid bisque;
+  box-shadow: -2px -2px 5px black;
+}
+body #drum-machine .control-panel {
+  display: inline-block;
+  vertical-align: top;
+  margin: 75px 20px 30px 30px;
+}
+body #drum-machine .control-panel #display {
+  height: 60px;
+  width: 150px;
+  background-color: grey;
+  border: 2px solid black;
+  margin: 0 0 40px 25px;
+  padding: 17px;
+}
+
+@media screen and (max-width: 650px) {
+  #drum-machine {
+    transform: scale(0.63);
+  }
+}
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type=range]::-moz-range-thumb {
+  border: none;
+}
+
+.range-style {
+  margin-top: -10px;
+  width: 200px;
+  height: 10px;
+  padding: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  box-shadow: -2px -2px 8px black, 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.range-style::-webkit-slider-runnable-track {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: inset -2px -2px 8px white, inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.range-style::-webkit-slider-thumb {
+  position: relative;
+  top: 0%;
+  width: 20px;
+  height: 20px;
+  background-color: #eb994d;
+  border-radius: 50%;
+  box-shadow: -1px -1px 2px white, 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.range-style::-moz-range-track {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: inset -2px -2px 8px white, inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.range-style::-moz-range-thumb {
+  position: relative;
+  top: 0%;
+  width: 20px;
+  height: 20px;
+  background-color: #eb994d;
+  border-radius: 50%;
+  box-shadow: -1px -1px 2px white, 1px 1px 2px rgba(0, 0, 0, 0.3);
+}/*# sourceMappingURL=styles.css.map */

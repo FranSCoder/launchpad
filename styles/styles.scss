@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap');
+
+$machineColor: linear-gradient(
+	220deg,
+	#2b2b2b 25%,
+	#525252 50%,
+	#2b2b2b 75%
+);
+$drumsColor: linear-gradient(
+	220deg,
+	#ff8c21 25%,
+	#ff9b3d 50%,
+	#ff8c21 75%
+);
+$primary: #e0e0e0;
+
+* {
+	margin: 0;
+	font-family: "Hind Siliguri", sans-serif;
+	font-weight: bold;
+	color: black;
+	-webkit-user-select: none; /* Safari */     
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+body {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+	overflow: hidden;
+	#drum-machine {
+		position: relative;
+		text-align: center;
+		width: 600px;
+		background-image: $machineColor;
+		border-radius: 1rem;
+		outline: 5px solid grey;
+		.pad-bank {
+			display: inline-block;
+			margin: 20px;
+			width: 270px;
+			height: 270px;
+			background-color: $machineColor;
+			.drum-pad {
+				position: relative;
+				float: left;
+				margin-right: 10px;
+				height: 75px;
+				width: 75px;
+				background-image: $drumsColor;
+				border-radius: 0.4rem;
+				cursor: pointer;
+				padding-top: 24px;
+				border: 2px solid bisque;
+				box-shadow: -2px -2px 5px black;
+			}
+		}
+		.control-panel {
+			display: inline-block;
+			vertical-align: top;
+			margin: 75px 20px 30px 30px;
+			
+			#display {
+				height: 60px;
+				width: 150px;
+				background-color: grey;
+				border: 2px solid black;
+				margin: 0 0 40px 25px;
+				padding: 17px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 650px) {
+  #drum-machine {
+    transform: scale(0.63);
+  }
+}
+
+//Custom Range Input. Credit: @Chupai@Design
+
+input[type='range'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+	cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  &::-moz-range-thumb {
+    border: none;
+  }
+}
+
+.range-style {
+	margin-top: -10px;
+  width: 200px;
+  height: 10px;
+  padding: 20px;
+  background: $primary;
+  border-radius: 10px;
+  box-shadow: -2px -2px 8px black, 2px 2px 8px rgba(black, 0.5);
+
+  @mixin track-style {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: inset -2px -2px 8px white, inset 2px 2px 8px rgba(black, 0.5);
+  }
+
+  @mixin thumb-style {
+    position: relative;
+    top: 0%;
+    width: 20px;
+    height: 20px;
+    background-color: #eb994d;
+    border-radius: 50%;
+    box-shadow: -1px -1px 2px white, 1px 1px 2px rgba(black, 0.3);
+  }
+  &::-webkit-slider-runnable-track {
+    @include track-style;
+  }
+  &::-webkit-slider-thumb {
+    @include thumb-style;
+  }
+  &::-moz-range-track {
+    @include track-style;
+  }
+  &::-moz-range-thumb {
+    @include thumb-style;
+  }
+}
